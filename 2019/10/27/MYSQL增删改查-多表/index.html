@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="数据查询–多表交叉连接:又名笛卡尔积，使用交叉连接会产生笛卡尔积假设集合A={a, b}，集合B={0, 1, 2}，则两个集合的笛卡尔积为{(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)}。
+1select *  from 表1,表2
+
+内连接：过滤为">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="MYSQL增删改查--多表">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="数据查询–多表交叉连接:又名笛卡尔积，使用交叉连接会产生笛卡尔积假设集合A={a, b}，集合B={0, 1, 2}，则两个集合的笛卡尔积为{(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)}。
+1select *  from 表1,表2
+
+内连接：过滤为">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>MYSQL增删改查--多表 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>MYSQL增删改查--多表</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-10-27
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="数据查询–多表"><a href="#数据查询–多表" class="headerlink" title="数据查询–多表"></a>数据查询–多表</h3><h5 id="交叉连接-又名笛卡尔积，使用交叉连接会产生笛卡尔积"><a href="#交叉连接-又名笛卡尔积，使用交叉连接会产生笛卡尔积" class="headerlink" title="交叉连接:又名笛卡尔积，使用交叉连接会产生笛卡尔积"></a>交叉连接:又名笛卡尔积，使用交叉连接会产生笛卡尔积</h5><p>假设集合A={a, b}，集合B={0, 1, 2}，则两个集合的笛卡尔积为{(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2)}。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *  from 表1,表2</span><br></pre></td></tr></table></figure>
+
+<h5 id="内连接：过滤为空的数据-查询的实际上是两张表数据的交集部分-目的-》解决笛卡尔积现象，正确查询了需要的数据"><a href="#内连接：过滤为空的数据-查询的实际上是两张表数据的交集部分-目的-》解决笛卡尔积现象，正确查询了需要的数据" class="headerlink" title="内连接：过滤为空的数据(查询的实际上是两张表数据的交集部分)    目的 ==》解决笛卡尔积现象，正确查询了需要的数据"></a>内连接：过滤为空的数据(查询的实际上是两张表数据的交集部分)    目的 ==》解决笛卡尔积现象，正确查询了需要的数据</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1,表2  where 表1.字段=表2.字段;</span><br></pre></td></tr></table></figure>
+
+<p>//隐式内连接,使用where条件消除笛卡尔积</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1 [inner] join 表2 on 表1.字段=表2.字段;</span><br></pre></td></tr></table></figure>
+
+<p>//显式内连接,如果是多张表，则一直在join..on后依次添加join..on即可,inner关键字可被省略</p>
+<h5 id="外连接：左外连接、右外连接、全外连接"><a href="#外连接：左外连接、右外连接、全外连接" class="headerlink" title="外连接：左外连接、右外连接、全外连接"></a>外连接：左外连接、右外连接、全外连接</h5><h5 id="左外连接-以左边表为主，返回左边表中所有数据，若右表中无数据，则显示为NULL，请参考实际查询结果来理解"><a href="#左外连接-以左边表为主，返回左边表中所有数据，若右表中无数据，则显示为NULL，请参考实际查询结果来理解" class="headerlink" title="左外连接:以左边表为主，返回左边表中所有数据，若右表中无数据，则显示为NULL，请参考实际查询结果来理解"></a>左外连接:以左边表为主，返回左边表中所有数据，若右表中无数据，则显示为NULL，请参考实际查询结果来理解</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1 left [outer] join 表2 on 表1.字段=表2.字段;</span><br></pre></td></tr></table></figure>
+
+<p>//表1为左表，表2为右表,outer关键字可被省略</p>
+<h5 id="右外连接：以右边表为主，返回右表中所有数据，若左表中无数据，则显示为NULL，结合实际查询结果来理解"><a href="#右外连接：以右边表为主，返回右表中所有数据，若左表中无数据，则显示为NULL，结合实际查询结果来理解" class="headerlink" title="右外连接：以右边表为主，返回右表中所有数据，若左表中无数据，则显示为NULL，结合实际查询结果来理解"></a>右外连接：以右边表为主，返回右表中所有数据，若左表中无数据，则显示为NULL，结合实际查询结果来理解</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表1 right [outer] join 表2 on 表1.字段=表2.字段;</span><br></pre></td></tr></table></figure>
+
+<p>//表1为左表，表2为右表,outer关键字可被省略</p>
+<h5 id="全外连接：返回涉及的多表中的所有数据，MYSQL中不支持该查询，仅限了解自连接：单表当作多表查询，直白的讲就是一张表中数据含有多种关系，使用多表查询的语法，来查询一张表，查询过程中一定要使用别名"><a href="#全外连接：返回涉及的多表中的所有数据，MYSQL中不支持该查询，仅限了解自连接：单表当作多表查询，直白的讲就是一张表中数据含有多种关系，使用多表查询的语法，来查询一张表，查询过程中一定要使用别名" class="headerlink" title="全外连接：返回涉及的多表中的所有数据，MYSQL中不支持该查询，仅限了解自连接：单表当作多表查询，直白的讲就是一张表中数据含有多种关系，使用多表查询的语法，来查询一张表，查询过程中一定要使用别名"></a>全外连接：返回涉及的多表中的所有数据，MYSQL中不支持该查询，仅限了解自连接：单表当作多表查询，直白的讲就是一张表中数据含有多种关系，使用多表查询的语法，来查询一张表，查询过程中一定要使用别名</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 表1.字段1,表2.字段2 from 表名 as 表1,表名 as 表2 where 表1.字段1=表2.字段2</span><br></pre></td></tr></table></figure>
+
+<h5 id="子查询：将一个查询结果作为另一个查询的对象，直白的讲就是SQL语句嵌套"><a href="#子查询：将一个查询结果作为另一个查询的对象，直白的讲就是SQL语句嵌套" class="headerlink" title="子查询：将一个查询结果作为另一个查询的对象，直白的讲就是SQL语句嵌套"></a>子查询：将一个查询结果作为另一个查询的对象，直白的讲就是SQL语句嵌套</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from (select * from 表名) as 别名select * from where 条件</span><br></pre></td></tr></table></figure>
+
+<p>注意：1.查询结果的虚拟表必须取别名<br>           2.字段与关键字一样，冲突时，需要给字段名加``,(Esc键下面、1的左边)<br>           3.如果给虚拟结果表中的字段取了别名，则对虚拟结果表查询时，应该用 表别名.虚拟表字段别名</p>
+<h3 id="数据备份"><a href="#数据备份" class="headerlink" title="数据备份"></a>数据备份</h3><h5 id="在命令行窗口进行，若操作系统版本高，则使用管理员模式"><a href="#在命令行窗口进行，若操作系统版本高，则使用管理员模式" class="headerlink" title="在命令行窗口进行，若操作系统版本高，则使用管理员模式"></a>在命令行窗口进行，若操作系统版本高，则使用管理员模式</h5><p>导出：</p>
+<p>mysqldump -u账户 -p密码 数据库名称&gt;脚本文件存储地</p>
+<p>ex:         mysqldump -uroot -proot jdbcdemo&gt; C:/shop_bak.sql<br>导入：</p>
+<p>mysql -u账户 -p密码 数据库名称&lt; 脚本文件存储地址</p>
+<p>ex:         mysql -uroot -proot jdbcdemo&lt; C:/shop_bak.sql<br>使用可视化导入导出：<br>Navicat工具的导入和导出/Navicat工具的备份和还原</p>
+<h3 id="数据索引"><a href="#数据索引" class="headerlink" title="数据索引"></a>数据索引</h3><h5 id="索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。"><a href="#索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。" class="headerlink" title="索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。"></a>索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。</h5><h5 id="什么列适合建索引？？"><a href="#什么列适合建索引？？" class="headerlink" title="什么列适合建索引？？"></a>什么列适合建索引？？</h5><p>1.表的主键、外键必须有索引；<br>2.数据量超过30000的表应该有索引；<br>3.经常与其他表进行连接的表，在连接字段上应该建立索引；<br>4.经常出现在Where子句中的字段，特别是大表的字段，应该建立索引；<br>5.索引应该建在选择性高的字段上；<br>6.索引应该建在小字段上，对于大的文本字段甚至超长字段，不要建索引； </p>
+<h5 id="sql语句创建和删除索引："><a href="#sql语句创建和删除索引：" class="headerlink" title="sql语句创建和删除索引："></a>sql语句创建和删除索引：</h5><p>创建索引: </p>
+<p>CREATE INDEX 索引名称 ON 表名 (列名)</p>
+<p>删除索引:<br>方式一：</p>
+<p>DROP INDEX 索引名 ON 表名 </p>
+<p>方式二:  </p>
+<p>ALTER TABLE 表名 DROP INDEX 索引名</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
