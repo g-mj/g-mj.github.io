@@ -13,6 +13,15 @@
     
 
     
+        <meta name="description" content="页面介绍login.jsp
+用户登录页面，提交给process.jsp。 
+process.jsp
+处理页面，若用户名为“admin”，密码为“000”，则跳转到show.jsp，否则跳转login.jsp。
+show.jsp
+列出登录页面的属性。
+源代码login.jsp
+123456789101">
+    
 
     <!--Author-->
     
@@ -25,6 +34,15 @@
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="页面介绍login.jsp
+用户登录页面，提交给process.jsp。 
+process.jsp
+处理页面，若用户名为“admin”，密码为“000”，则跳转到show.jsp，否则跳转login.jsp。
+show.jsp
+列出登录页面的属性。
+源代码login.jsp
+123456789101">
     
 
     <!--Open Graph Site Name-->
@@ -189,7 +207,35 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <h2 id="页面介绍"><a href="#页面介绍" class="headerlink" title="页面介绍"></a>页面介绍</h2><p><strong>login.jsp</strong></p>
+<p>用户登录页面，提交给process.jsp。 </p>
+<p><strong>process.jsp</strong></p>
+<p>处理页面，若用户名为“admin”，密码为“000”，则跳转到show.jsp，否则跳转login.jsp。</p>
+<p><strong>show.jsp</strong></p>
+<p>列出登录页面的属性。</p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>login.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"process.jsp"</span> method=<span class="string">"post"</span>&gt;  </span><br><span class="line">    用户名：&lt;input name=<span class="string">"username"</span> value=<span class="string">""</span> /&gt;&lt;br&gt;  </span><br><span class="line">    用户密码：&lt;input name=<span class="string">"pwd"</span> value=<span class="string">""</span> /&gt;&lt;br&gt;  </span><br><span class="line">    用户性别：&lt;input type=<span class="string">"radio"</span> name=<span class="string">"sex"</span> value=<span class="string">"男"</span>&gt;男          </span><br><span class="line">    		&lt;input type=<span class="string">"radio"</span> name=<span class="string">"sex"</span> value=<span class="string">"女"</span>&gt;女&lt;br&gt;  </span><br><span class="line">    用户爱好：&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobby"</span> value=<span class="string">"游泳"</span>&gt;游泳		  </span><br><span class="line">    		&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobby"</span> value=<span class="string">"看书"</span>&gt;看书</span><br><span class="line">    		&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobby"</span> value=<span class="string">"看电影"</span>&gt;看电影		   &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobby"</span> value=<span class="string">"写代码"</span>&gt;写代码&lt;br&gt;  </span><br><span class="line">    用户籍贯：&lt;select name=<span class="string">"home"</span>&gt;		    </span><br><span class="line">    			&lt;option value="广州"&gt;广州&lt;/option&gt;		   </span><br><span class="line">   				&lt;option value="重庆"&gt;重庆&lt;/option&gt;		    </span><br><span class="line">   				&lt;option value="上海"&gt;上海&lt;/option&gt;		   </span><br><span class="line">   			&lt;/select&gt;		 </span><br><span class="line">   		 	&lt;br&gt;  </span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;  </span><br><span class="line">    &lt;input type=<span class="string">"reset"</span> value=<span class="string">"重置"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>process.jsp</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;%	</span><br><span class="line">String path = request.getContextPath();	</span><br><span class="line">String basePath = request.getScheme()+<span class="string">"://"</span>+request.getServerName()+<span class="string">":"</span>+request.getServerPort()+path+<span class="string">"/"</span>;		</span><br><span class="line">	request.setCharacterEncoding(<span class="string">"utf-8"</span>);		</span><br><span class="line">	String username = request.getParameter(<span class="string">"username"</span>);	</span><br><span class="line">	String pwd = request.getParameter(<span class="string">"pwd"</span>);	</span><br><span class="line">	String[] hobby = request.getParameterValues(<span class="string">"hobby"</span>);		</span><br><span class="line">	String sex = request.getParameter(<span class="string">"sex"</span>);	</span><br><span class="line">	String home = request.getParameter(<span class="string">"home"</span>);		</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"admin"</span>.equals(username) &amp;&amp; <span class="string">"000"</span>.equals(pwd))&#123;									session.setAttribute(<span class="string">"username"</span>, username);		                  </span><br><span class="line">		session.setAttribute(<span class="string">"hobby"</span>, hobby);	</span><br><span class="line">		session.setAttribute(<span class="string">"home"</span>, home);</span><br><span class="line">		session.setAttribute(<span class="string">"sex"</span>, sex);												request.getRequestDispatcher(<span class="string">"show.jsp"</span>).forward(request, response);	</span><br><span class="line"> 	&#125;	</span><br><span class="line">	<span class="keyword">else</span>&#123;	</span><br><span class="line">    		response.sendRedirect(<span class="string">"login.jsp"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>show.jsp</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%  request.setCharacterEncoding(<span class="string">"utf-8"</span>); %&gt;    </span><br><span class="line">	用户姓名：&lt;%= session.getAttribute(<span class="string">"username"</span>)%&gt;&lt;br&gt;   </span><br><span class="line">	用户性别：&lt;%= session.getAttribute(<span class="string">"sex"</span>)%&gt;&lt;br&gt;    </span><br><span class="line">	用户爱好：&lt;%     		   </span><br><span class="line">				String[] hobby = (String[])session.getAttribute(<span class="string">"hobby"</span>);    </span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;hobby.length; i++)    		     </span><br><span class="line">    			out.println(hobby[i]+<span class="string">"  "</span>);    	    </span><br><span class="line">			%&gt;&lt;br&gt;    </span><br><span class="line">	用户籍贯：&lt;%= session.getAttribute(<span class="string">"home"</span>)%&gt;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><h3 id="1、获取表单中对应name属性值的存放的value"><a href="#1、获取表单中对应name属性值的存放的value" class="headerlink" title="1、获取表单中对应name属性值的存放的value"></a><strong>1、获取表单中对应name属性值的存放的value</strong></h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String &lt;变量名&gt; = request.getParameter(<span class="string">"&lt;表单中的name属性值&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、获取表单中复选框选中的所有值，存放在数据中"><a href="#2、获取表单中复选框选中的所有值，存放在数据中" class="headerlink" title="2、获取表单中复选框选中的所有值，存放在数据中"></a><strong>2、获取表单中复选框选中的所有值，存放在数据中</strong></h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] &lt;一维数组名&gt; = request.getParameterValues(<span class="string">"&lt;表单中复选框统一的name属性值&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、把数组传入sesstion"><a href="#3、把数组传入sesstion" class="headerlink" title="3、把数组传入sesstion"></a><strong>3、把数组传入sesstion</strong></h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(<span class="string">"&lt;存放的变量名或数组名&gt;"</span>, &lt;当前页面的变量名或数组名&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、在另一页面传出session中存的值"><a href="#4、在另一页面传出session中存的值" class="headerlink" title="4、在另一页面传出session中存的值"></a><strong>4、在另一页面传出session中存的值</strong></h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单值session</span></span><br><span class="line">&lt;%= session.getAttribute(<span class="string">"&lt;变量名&gt;"</span>); %&gt;</span><br><span class="line"><span class="comment">//数组session</span></span><br><span class="line">String[] &lt;数组名&gt; = (String[])session.getAttribute(<span class="string">"&lt;数组名&gt;"</span>);   </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;&lt;数组名&gt;.length; i++)       </span><br><span class="line">    	out.println(&lt;数组名&gt;[i]+<span class="string">"  "</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、重定向和转发"><a href="#5、重定向和转发" class="headerlink" title="5、重定向和转发"></a><strong>5、重定向和转发</strong></h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转发</span></span><br><span class="line">request.getRequestDispatcher(<span class="string">"xxx.jsp"</span>).forward(request, response);</span><br><span class="line"><span class="comment">//重定向</span></span><br><span class="line">response.sendRedirect(<span class="string">"xxx.jsp"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>重定向不传数据，地址栏发生变化；</p>
+<p>转发是在同一个请求里，地址栏不发生变化。 </p>
+<p>当需要保存一个内容的时候，使用转发；不需要保存内容的时候，使用重定向。</p>
+
 
                 
             </div>
