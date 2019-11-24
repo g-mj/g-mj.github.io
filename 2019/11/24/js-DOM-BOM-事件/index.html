@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="js-DOM学习在学习DOM的时候，主要是对页面元素进行操作，无非就是对页面元素进行增删改查的操作，接下来就来学习一下DOM的一些常规操作。
+1.如何获取页面的元素1.根据ID获取
+1234document.getElementByid(&#39;ID&#39;)获取单个页面元素，参数是字符串返回的是object类">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="js-DOM&amp;BOM&amp;事件">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="js-DOM学习在学习DOM的时候，主要是对页面元素进行操作，无非就是对页面元素进行增删改查的操作，接下来就来学习一下DOM的一些常规操作。
+1.如何获取页面的元素1.根据ID获取
+1234document.getElementByid(&#39;ID&#39;)获取单个页面元素，参数是字符串返回的是object类">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>js-DOM&amp;BOM&amp;事件 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>js-DOM&BOM&事件</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-11-24
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="js-DOM学习"><a href="#js-DOM学习" class="headerlink" title="js-DOM学习"></a>js-DOM学习</h3><p>在学习DOM的时候，主要是对页面元素进行操作，无非就是对页面元素进行增删改查的操作，接下来就来学习一下DOM的一些常规操作。</p>
+<h5 id="1-如何获取页面的元素"><a href="#1-如何获取页面的元素" class="headerlink" title="1.如何获取页面的元素"></a>1.如何获取页面的元素</h5><p>1.根据ID获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementByid(<span class="string">'ID'</span>)</span><br><span class="line">获取单个页面元素，</span><br><span class="line">参数是字符串</span><br><span class="line">返回的是object类型，没有则返回<span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>2.根据标签名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">getElementByTagName(<span class="string">'标签名'</span>)</span><br><span class="line">返回的是元素对象的集合</span><br></pre></td></tr></table></figure>
+
+<p>3.根据HTML5新增的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>根据类名</span><br><span class="line">    getElementByClassName(<span class="string">'id'</span>)</span><br><span class="line">    根据雷鸣获取元素，获取的是一个元素集合</span><br><span class="line">    </span><br><span class="line"> <span class="number">2.</span>选择器 (常用)</span><br><span class="line">    querySelector(<span class="string">'#ID'</span>) </span><br><span class="line">    根据选择器进行选择</span><br><span class="line">    返回指定选择器的第一个元素对象，获取单个</span><br><span class="line">    里面的选择器需要加符号</span><br><span class="line">    </span><br><span class="line">  <span class="number">3.</span>选择器 （常用）</span><br><span class="line">    querySelectAll(<span class="string">'li'</span>)</span><br><span class="line">    返回的是一个元素集合</span><br></pre></td></tr></table></figure>
+
+<p>4.特殊元素获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>获取body标签</span><br><span class="line"><span class="built_in">document</span>.body</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>获取HTML标签</span><br><span class="line"><span class="built_in">document</span>.documentElement;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-事件三元素（重点）"><a href="#2-事件三元素（重点）" class="headerlink" title="2.事件三元素（重点）"></a>2.事件三元素（重点）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>事件源：要触发的对象</span><br><span class="line"><span class="number">2.</span>事件类型：触发什么事件</span><br><span class="line"><span class="number">3</span>。处理程序：做什么</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-鼠标常用事件（重点）"><a href="#3-鼠标常用事件（重点）" class="headerlink" title="3.鼠标常用事件（重点）"></a>3.鼠标常用事件（重点）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>click 鼠标点击事件</span><br><span class="line"><span class="number">2.</span>mouseover  鼠标经过事件</span><br><span class="line"><span class="number">3.</span>mouseout  鼠标离开事件</span><br><span class="line"><span class="number">4.</span>focus  获取焦点</span><br><span class="line"><span class="number">5.</span>blur 失去焦点</span><br><span class="line"><span class="number">6.</span>mousemove  鼠标移动触发</span><br><span class="line"><span class="number">7.</span>mouseup  鼠标弹起</span><br><span class="line"><span class="number">8.</span>mousedown  鼠标按下</span><br><span class="line"><span class="number">9.</span>input 表单内容改变</span><br><span class="line"><span class="number">10.</span>change 内容改变触发事件</span><br><span class="line"><span class="number">11.</span>mouseenter 鼠标移入</span><br><span class="line"><span class="number">12.</span>mouseleave  鼠标移除</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-mouseover和mousemove的区别："><a href="#4-mouseover和mousemove的区别：" class="headerlink" title="4.mouseover和mousemove的区别："></a>4.mouseover和mousemove的区别：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">前者只执行一次，mousemove是鼠标移动到指定位置会一直触发。</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-操作元素对象的属性"><a href="#5-操作元素对象的属性" class="headerlink" title="5.操作元素对象的属性"></a>5.操作元素对象的属性</h5><p>1.非表单元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>element.innerText=<span class="string">''</span>;  设置标签中的文本内容</span><br><span class="line"><span class="number">2.</span>element.innerHTML=<span class="string">''</span> 设置标签中的内容，会解析html标签</span><br><span class="line"><span class="number">3.</span>element.src=<span class="string">''</span>; 设置图片的路径</span><br><span class="line"><span class="number">4.</span>element.title=<span class="string">''</span> 设置标题 鼠标悬停在图片上显示的提示文本</span><br><span class="line"><span class="number">5.</span>element.href=<span class="string">''</span> 设置表单中的内容</span><br></pre></td></tr></table></figure>
+
+<p>2.表单元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>input.value=‘’ 设置表单中的内容</span><br><span class="line"><span class="number">2.</span>input.type=<span class="string">''</span> 设置表单的类型</span><br><span class="line"><span class="number">3.</span>input.disabled=<span class="literal">true</span>  是否禁用（<span class="literal">true</span>表示禁用 <span class="literal">false</span>表示可用）</span><br><span class="line"><span class="number">4.</span>input.checked=<span class="literal">true</span>  是否选中（<span class="literal">true</span>表示选中 <span class="literal">false</span>表示不选中）</span><br><span class="line"><span class="number">5.</span>input.selected=<span class="literal">true</span> 是否选中</span><br></pre></td></tr></table></figure>
+
+<p>3.样式的操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">element.style.属性名=<span class="string">''</span> </span><br><span class="line">     特点： 设置数量较少的样式，权重高，可以接受变量</span><br><span class="line">    </span><br><span class="line">element.className=<span class="string">''</span>  </span><br><span class="line">    特点： 会覆盖原来的类样式，设置较多的样式，权重不高，</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-排他思想（重点）"><a href="#6-排他思想（重点）" class="headerlink" title="6.排他思想（重点）"></a>6.排他思想（重点）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.使用for循环变量所有的元素，然后把他们元素设置样式为空</span><br><span class="line">2.循环结束给当前元素设置样式。</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-H5自定义属性（重点）"><a href="#7-H5自定义属性（重点）" class="headerlink" title="7.H5自定义属性（重点）"></a>7.H5自定义属性（重点）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.获取自定义属性： element.getAttribute(属性名)</span><br><span class="line">2.设置自定义属性：element.setAttribute(属性名，属性值)</span><br><span class="line">3.移除自定义属性：element.removeAttribute(属性名)</span><br><span class="line"></span><br><span class="line">H5规定自定义属性必须以date- 开头</span><br><span class="line">dateset是一个集合里面存放了所有以data开头的自定义属性</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-节点操作（重点）"><a href="#8-节点操作（重点）" class="headerlink" title="8.节点操作（重点）"></a>8.节点操作（重点）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>获取父节点 （常用）：</span><br><span class="line">element.parentNode()</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>获取子节点 （常用）:</span><br><span class="line">element.children();</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>获取子节点：</span><br><span class="line">element.childNodes   </span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>获取第一个节点|元素</span><br><span class="line">element.firstChild</span><br><span class="line">element.firstElementChild</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>获取最后一个子节点|元素</span><br><span class="line">element.lastChild</span><br><span class="line">element.lastElementChild</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>获取殇一二兄弟节点|元素</span><br><span class="line">element.previousSibling</span><br><span class="line">element.previousElementSibling</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>获取下一个兄弟节点|元素</span><br><span class="line">element.nextSibling</span><br><span class="line">element.nextElementSibling</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-动态添加节点"><a href="#9-动态添加节点" class="headerlink" title="9.动态添加节点"></a>9.动态添加节点</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>使用element.innerHTML=<span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>创建元素，然后添加</span><br><span class="line"><span class="keyword">var</span> li=<span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">parent.appendChild(li);  <span class="comment">//在父元素最后面追加子元素</span></span><br><span class="line">parent.insertBefore(li,参照的元素)  <span class="comment">//在父元素最前面追加子元素</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="10-节点操作"><a href="#10-节点操作" class="headerlink" title="10.节点操作"></a>10.节点操作</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>删除节点  （常用）</span><br><span class="line">parent.removeChild(child)  只能父亲删除儿子</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>克隆节点	（常用）</span><br><span class="line">element.cloneNode(<span class="literal">false</span>|<span class="literal">true</span>)</span><br><span class="line"><span class="literal">false</span>代表浅克隆，只会克隆标签</span><br><span class="line"><span class="literal">true</span>代表深克隆，克隆所有内容</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-创建节点的三种方式"><a href="#11-创建节点的三种方式" class="headerlink" title="11.创建节点的三种方式"></a>11.创建节点的三种方式</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write()  </span><br><span class="line">	特点：如果当页面已经渲染完毕，再次触发这个方法的话，会覆盖原来页面的所有内容</span><br><span class="line">element.innerHTML</span><br><span class="line">	特点：效率高，结构不方便查看，也不方便进行事件的注册</span><br><span class="line"><span class="built_in">document</span>.createElement()</span><br><span class="line">	特点： 效率比innerHTML低一些，但是结构比较清晰，方便去进行事件的注册</span><br></pre></td></tr></table></figure>
+
+<h5 id="12-注册事件的方法-（重点）"><a href="#12-注册事件的方法-（重点）" class="headerlink" title="12.注册事件的方法 （重点）"></a><strong>12.注册事件的方法 （重点）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.传统方式</span><br><span class="line">btn.onclick=function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.添加监听</span><br><span class="line">btn.addEventListener(&apos;click&apos;,fn,flag)</span><br><span class="line">flag:false代表的是事件冒泡</span><br><span class="line">flag:true代表的是事件的捕获</span><br></pre></td></tr></table></figure>
+
+<h5 id="13-注销事件的方式-（重点）"><a href="#13-注销事件的方式-（重点）" class="headerlink" title="13.注销事件的方式 （重点）"></a>13.注销事件的方式 （重点）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.传统方式</span><br><span class="line">btn.onclick=null;</span><br><span class="line"></span><br><span class="line">2.监听方式</span><br><span class="line">btn.removeEventListener(&apos;click&apos;,fn)  //事件  函数</span><br></pre></td></tr></table></figure>
+
+<p><strong>14.事件的三个阶段    （重点）</strong></p>
+<ul>
+<li>1.捕获阶段</li>
+<li>2.目标阶段</li>
+<li>3.冒泡阶段</li>
+</ul>
+<p><strong>15事件对象    （重点）</strong><br> 1.什么是事件对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">描述一件事情的对象，里面封装了这次事件相关的数据信息</span><br></pre></td></tr></table></figure>
+
+<p>2.事件对象的属性 <strong>（重点）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">e.target 获取触发事件的对象</span><br><span class="line">e.type  获取事件类型</span><br><span class="line">e.pageX|pageY  获取鼠标在页面中的位置</span><br><span class="line">e.clientX|clientY  获取鼠标在可视区的位置</span><br><span class="line">e.screenX|e.screenY  获取鼠标在屏幕中的位置</span><br></pre></td></tr></table></figure>
+
+<p>3.阻止冒泡</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.stopPropagation();</span><br></pre></td></tr></table></figure>
+
+<p>4.阻止默认行为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.preventDefault();</span><br></pre></td></tr></table></figure>
+
+<h5 id="16-什么是事件委托-（重点）"><a href="#16-什么是事件委托-（重点）" class="headerlink" title="16.什么是事件委托    （重点）"></a>16.<strong>什么是事件委托    （重点）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">原理：使用的是事件冒泡</span><br><span class="line"></span><br><span class="line">本应该给子元素绑定的事件，给父元素去设置，这样一旦我们点击了子元素</span><br><span class="line">，就会通过事件冒泡给父元素父元素的事件，然后我们可以通过事件对象.target</span><br><span class="line">就能够得到目标元素。</span><br></pre></td></tr></table></figure>
+
+<h5 id="17-键盘事件"><a href="#17-键盘事件" class="headerlink" title="17.键盘事件"></a>17.<strong>键盘事件</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keydown 当键盘按下的时候触发    识别功能键</span><br><span class="line">keypress 当键盘按下的时候触发  不识别功能键</span><br><span class="line">keyup  当键盘抬起的时候触发</span><br><span class="line">我们可以通过事件对象 e.keyCode 来获取键盘按下对应按键的 asicc 码</span><br></pre></td></tr></table></figure>
+
+<h3 id="BOM学习"><a href="#BOM学习" class="headerlink" title="BOM学习"></a>BOM学习</h3><h5 id="1-窗口加载事件（重点）"><a href="#1-窗口加载事件（重点）" class="headerlink" title="1.窗口加载事件（重点）"></a>1.<strong>窗口加载事件（重点）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">页面所有元素加载完毕的时候调用</span><br><span class="line">1.window.load=function()&#123;&#125;  </span><br><span class="line">2.window.addEventListenner(&apos;load&apos;,function()&#123;&#125;);</span><br><span class="line">3.DOMCotentLoaded  Dom元素渲染完毕的时候调用</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-resize窗口改变的时候调用"><a href="#2-resize窗口改变的时候调用" class="headerlink" title="2.resize窗口改变的时候调用"></a>2.resize窗口改变的时候调用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法：</span><br><span class="line">获取窗口的宽高</span><br><span class="line">	1.window.innerWidth</span><br><span class="line">	2.window.innerHeight</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-两种定时器"><a href="#3-两种定时器" class="headerlink" title="3.两种定时器"></a>3.<strong>两种定时器</strong></h5><p>第一种</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> time=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,事件)</span><br><span class="line">返回值是定时器的标识，这个标识可以用来清除定时器</span><br><span class="line">clearTimeout(time)   <span class="comment">//清除定时器</span></span><br></pre></td></tr></table></figure>
+
+<p>第二种（常用）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  time=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,间隔时间)</span><br><span class="line">clearTimeout(time)  <span class="comment">//清除定时器</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>区别：</strong><br>setTimeout只会执行一次，setInterval可以重复进行执行</p>
+<h5 id="4-this指向问题-（重点）"><a href="#4-this指向问题-（重点）" class="headerlink" title="4.this指向问题 （重点）"></a>4.<strong>this指向问题 （重点）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.在全局作用域下、普通函数、定时器的this执行都是指window</span><br><span class="line">2.在方法中谁调用了this就指向谁</span><br><span class="line">3.在构造函数中调用指向的就是当前对象</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-js执行的机制（重点）"><a href="#5-js执行的机制（重点）" class="headerlink" title="5.js执行的机制（重点）"></a>5.<strong>js执行的机制（重点）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js执行机制中分为同步任务和异步任务，首先代码在执行的时候先执行执行栈中的同步任务，</span><br><span class="line">如果在执行过程中遇到回调函数就会通过异步进程判断他是否进行了事件操作如果是把</span><br><span class="line">他放到异步任务队列当中，然后再继续执行，当同步任务执行完毕之后，系统会按次序读</span><br><span class="line">取任务队列中的异步任务。如果有就把他放到执行栈中执行</span><br></pre></td></tr></table></figure>
+
+<p><strong>事件循环：</strong><br>由于主线程不断地重复获得任务，执行任务，再次获取任务，再执行，这种机制被称为事件循环</p>
+<h5 id="6-window里面的内置对象"><a href="#6-window里面的内置对象" class="headerlink" title="6.window里面的内置对象"></a>6.<strong>window里面的内置对象</strong></h5><p>location对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">location.href  获取的是地址栏的url，要是赋值用来跳转页面</span><br><span class="line">location.search  获取url后的参数  ?号后面的都是参数</span><br><span class="line">location.reload( <span class="literal">false</span>|<span class="literal">true</span>)    <span class="literal">false</span>代表普通刷新，有缓存就用缓存，没有就去请求服务器，设置<span class="literal">true</span>强制刷新，直接请求服务器</span><br><span class="line">location.assign()  跳转页面</span><br><span class="line">location.replace()  跳转，不存在历史记录中，就不能进行回退</span><br></pre></td></tr></table></figure>
+
+<p>navigation对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userAgent 获取的是客户端的类型（浏览器，手机，平板）</span><br></pre></td></tr></table></figure>
+
+<p>history</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">history.forward()  前进</span><br><span class="line">history.back()  后退</span><br><span class="line">history.go()  整数代表前进，负数代表是后退</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-三大系列："><a href="#7-三大系列：" class="headerlink" title="7.三大系列："></a>7.<strong>三大系列：</strong></h5><p>offset系列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">获取的是元素的偏移量，参照的是带有定位的父辈元素，如果父辈元</span><br><span class="line">素没有定位，参照的是body</span><br><span class="line">element.offsetTop|offsetLeft</span><br><span class="line"></span><br><span class="line">获取的元素的宽高， padding + border + 内容</span><br><span class="line">element.offsetWidth|offsetHeight</span><br><span class="line"></span><br><span class="line">获取的是带有定位的最近的父辈元素，如果父辈元素都没有定位，那么获取的是body</span><br><span class="line">element.offsetParent</span><br></pre></td></tr></table></figure>
+
+<p>client系列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">获取的是左边框|上边框的宽度</span><br><span class="line">element.clientLeft|clientTop</span><br><span class="line">	</span><br><span class="line">获取的是元素宽高， padding + 内容</span><br><span class="line">element.clientWidth|clientHeight</span><br></pre></td></tr></table></figure>
+
+<p>scrool系列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scrollLeft|scrollTop</span><br><span class="line">	水平|垂直方向滚动出去的距离</span><br><span class="line">	</span><br><span class="line">scrollWidth|scrollHeigh</span><br><span class="line">	内容的真实宽度|高度</span><br><span class="line">滚动整个页面的时候， window.pageYOffset</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-自动调用函数（立即执行函数）"><a href="#8-自动调用函数（立即执行函数）" class="headerlink" title="8.自动调用函数（立即执行函数）"></a>8.<strong>自动调用函数（立即执行函数）</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">好处：防止命名污染</span><br><span class="line">(function()&#123;&#125;)()</span><br><span class="line"></span><br><span class="line">(function()&#123;&#125;())</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-mouseenter-与-mouseover的区别"><a href="#9-mouseenter-与-mouseover的区别" class="headerlink" title="9.mouseenter 与 mouseover的区别"></a>9.<strong>mouseenter 与 mouseover的区别</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mouseenter 不会进行事件冒泡</span><br><span class="line">mouseover 是会进行事件冒泡</span><br></pre></td></tr></table></figure>
+
+<h5 id="10-动画的原理"><a href="#10-动画的原理" class="headerlink" title="10.动画的原理"></a>10.<strong>动画的原理</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">利用定时器 setInterval，在定时器的函数中，先获取到当前盒子的位置，然后加</span><br><span class="line">上移动的距离，最后把这个值设置给当前元素的偏移就好</span><br><span class="line"></span><br><span class="line">缓动动画：</span><br><span class="line">var step= (目标位置- 当前盒子的位置)/10</span><br><span class="line">把这个step + 盒子当前的位置，就是最后要设置给盒子的偏移量</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-节流阀的概念"><a href="#11-节流阀的概念" class="headerlink" title="11.节流阀的概念"></a>11.<strong>节流阀的概念</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">防止用户点击过快，导致我们的轮播图切换的速度变快</span><br><span class="line">让我们代码执行完了之后，再去执行其他的代码逻辑</span><br><span class="line"></span><br><span class="line">使用节流阀</span><br><span class="line">1.设置一个boolean的变量来控制</span><br><span class="line">2.当我们的轮播图的动画开始执行的时候，把这个boolean类型的值设置为false，当动画执行完毕的时候，把boolean类型的值设置成true</span><br></pre></td></tr></table></figure>
+
+<h5 id="12-移动端的事件"><a href="#12-移动端的事件" class="headerlink" title="12.移动端的事件"></a>12.<strong>移动端的事件</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touchstart</span><br><span class="line">	触摸到了屏幕</span><br><span class="line">	</span><br><span class="line">touchmove</span><br><span class="line">	手指在屏幕中滑动</span><br><span class="line">	</span><br><span class="line">touchend</span><br><span class="line">	手指离开屏幕</span><br></pre></td></tr></table></figure>
+
+<h5 id="13-移动端有特殊的事件对象"><a href="#13-移动端有特殊的事件对象" class="headerlink" title="13.移动端有特殊的事件对象"></a>13.<strong>移动端有特殊的事件对象</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touchEvent 触摸事件</span><br><span class="line"></span><br><span class="line">touches</span><br><span class="line">获取的是正在触摸屏幕的所有的手指对象的集合</span><br><span class="line">	</span><br><span class="line">targetTouches</span><br><span class="line">获取的是触摸当前元素对象的所有的手指对象的集合</span><br><span class="line">		</span><br><span class="line">changedTouches</span><br><span class="line">获取手指个数发生改变的手指对象的集合，从无到有，从有到无，添加手指</span><br><span class="line">，移除了一个手指</span><br></pre></td></tr></table></figure>
+
+<h5 id="14-类名操作"><a href="#14-类名操作" class="headerlink" title="14.类名操作"></a>14.<strong>类名操作</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.classList.add() 添加类名</span><br><span class="line">element.classList.remove() 移除类名</span><br><span class="line">element.classList.toggle() 切换类名 没有这个类名会进行添加，有这个类名会进行删除</span><br></pre></td></tr></table></figure>
+
+<h5 id="15-缓存（重点）"><a href="#15-缓存（重点）" class="headerlink" title="15.缓存（重点）"></a>15.<strong>缓存（重点）</strong></h5><p>sesstionStorage</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">生命周期：关闭当前窗口，那么缓存数据就没有了</span><br><span class="line">存储大小：5M</span><br><span class="line"> 方法</span><br><span class="line">	 sesstionStorage.setItem(key,value)  key代表是属性名   value 代表是属性值</span><br><span class="line">     sesstionStorage.getItem(key)  获取缓存数据</span><br><span class="line">     sesstionStorage.removeItem(key) 移除缓存数据</span><br><span class="line">     sessionStorage.clear()  清空</span><br></pre></td></tr></table></figure>
+
+<p>localStorge</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">生命周期:  永久生效，除非手动进行删除</span><br><span class="line">存储大小:  20M</span><br><span class="line">方法</span><br><span class="line">   localStorage.setItem(key,value)  key代表是属性名   value 代表是属性值</span><br><span class="line">   localStorage.getItem(key)  获取缓存数据</span><br><span class="line">   localStorage.removeItem(key) 移除缓存数据</span><br><span class="line">   localStorage.clear()  清空</span><br></pre></td></tr></table></figure>
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
