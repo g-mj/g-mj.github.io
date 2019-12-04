@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="jsp指令一、概述JSP指令的格式：&amp;lt;%@指令名 attr1=”” attr2=””%&amp;gt;，一般都会把JSP指令放到JSP文件的最上方，但这不是必须的。
+JSP中有三大指令：page、include、taglib，最为常用，也最为复杂的就是page指令了。
+二、page指令page指令是最">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="jsp指令">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="jsp指令一、概述JSP指令的格式：&amp;lt;%@指令名 attr1=”” attr2=””%&amp;gt;，一般都会把JSP指令放到JSP文件的最上方，但这不是必须的。
+JSP中有三大指令：page、include、taglib，最为常用，也最为复杂的就是page指令了。
+二、page指令page指令是最">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>jsp指令 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>jsp指令</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-12-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="jsp指令"><a href="#jsp指令" class="headerlink" title="jsp指令"></a>jsp指令</h2><h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>JSP指令的格式：&lt;%@指令名 attr1=”” attr2=””%&gt;，一般都会把JSP指令放到JSP文件的最上方，但这不是必须的。</p>
+<p>JSP中有三大指令：page、include、taglib，最为常用，也最为复杂的就是page指令了。</p>
+<h3 id="二、page指令"><a href="#二、page指令" class="headerlink" title="二、page指令"></a>二、page指令</h3><p>page指令是最为常用的指定，也是属性最多的属性！</p>
+<p>page指令没有必须属性，都是可选属性。例如&lt;%@page %&gt;，没有给出任何属性也是可以的！</p>
+<p>在JSP页面中，任何指令都可以重复出现！</p>
+<p>&lt;%@ page language=”java”%&gt;</p>
+<p>&lt;%@ pageimport=”java.util.*”%&gt;</p>
+<p>&lt;%@ pagepageEncoding=”utf-8”%&gt;</p>
+<p>这也是可以的！</p>
+<h4 id="2-1、page指令的pageEncoding和contentType"><a href="#2-1、page指令的pageEncoding和contentType" class="headerlink" title="2.1、page指令的pageEncoding和contentType"></a>2.1、page指令的pageEncoding和contentType</h4><p>pageEncoding指定当前JSP页面的编码！这个编码是给服务器看的，服务器需要知道当前JSP使用的编码，不然服务器无法正确把JSP编译成java文件。所以这个编码只需要与真实的页面编码一致即可！在MyEclipse中，在JSP文件上点击右键，选择属性就可以看到当前JSP页面的编码了。</p>
+<p>contentType属性与response.setContentType()方法的作用相同！它会完成两项工作，一是设置响应字符流的编码，二是设置content-type响应头。例如：&lt;%@contentType=”text/html;charset=utf-8”%&gt;，它会使“真身”中出现response.setContentType(“text/html;charset=utf-8”)。</p>
+<p>无论是page指令的pageEncoding还是contentType，它们的默认值都是ISO-8859-1，我们知道ISO-8859-1是无法显示中文的，所以JSP页面中存在中文的话，一定要设置这两个属性。</p>
+<p>其实pageEncoding和contentType这两个属性的关系很“暧昧”：</p>
+<p>l  当设置了pageEncoding，而没设置contentType时：contentType的默认值为pageEncoding；</p>
+<p>l  当设置了contentType，而没设置pageEncoding时：pageEncoding的默认值与contentType；</p>
+<p>也就是说，当pageEncoding和contentType只出现一个时，那么另一个的值与出现的值相同。如果两个都不出现，那么两个属性的值都是ISO-8859-1。所以通过我们至少设置它们两个其中一个！</p>
+<h4 id="2-2、page指令的import属性"><a href="#2-2、page指令的import属性" class="headerlink" title="2.2、page指令的import属性"></a>2.2、page指令的import属性</h4><p>import是page指令中一个很特别的属性！</p>
+<p>import属性值对应“真身”中的import语句。</p>
+<p>import属性值可以使逗号：&lt;%@page import=”java.net.<em>,java.util.</em>,java.sql.*”%&gt;</p>
+<p>import属性是唯一可以重复出现的属性：</p>
+<p>&lt;%@pageimport=”java.util.<em>” import=”java.net.</em>” import=”java.sql.*”%&gt;</p>
+<p>但是，我们一般会使用多个page指令来导入多个包：</p>
+<p>&lt;%@ pageimport=”java.util.*”%&gt;</p>
+<p>&lt;%@ pageimport=”java.net.*”%&gt;</p>
+<p>&lt;%@ pageimport=”java.text.*”%&gt;</p>
+<h4 id="2-3、page指令的errorPage和isErrorPage"><a href="#2-3、page指令的errorPage和isErrorPage" class="headerlink" title="2.3、page指令的errorPage和isErrorPage"></a>2.3、page指令的errorPage和isErrorPage</h4><p>我们知道，在一个JSP页面出错后，Tomcat会响应给用户错误信息（500页面）！如果你不希望Tomcat给用户输出错误信息，那么可以使用page指令的errorPage来指定错误页！也就是自定义错误页面，例如：&lt;%@page errorPage=”xxx.jsp”%&gt;。这时，在当前JSP页面出现错误时，会请求转发到xxx.jsp页面</p>
+<p>注意，当isErrorPage为true时，说明当前JSP为错误页面，即专门处理错误的页面。那么这个页面中就可以使用一个内置对象exception了。其他页面是不能使用这个内置对象的！</p>
+<h4 id="2-4、web-xml中配置错误页面"><a href="#2-4、web-xml中配置错误页面" class="headerlink" title="2.4、web.xml中配置错误页面"></a>2.4、web.xml中配置错误页面</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;error-page&gt;</span><br><span class="line">    &lt;error-code&gt;404&lt;/error-code&gt;</span><br><span class="line">    &lt;location&gt;/error404.jsp&lt;/location&gt;</span><br><span class="line">  &lt;/error-page&gt;</span><br><span class="line">  &lt;error-page&gt;</span><br><span class="line">    &lt;error-code&gt;500&lt;/error-code&gt;</span><br><span class="line">    &lt;location&gt;/error500.jsp&lt;/location&gt;</span><br><span class="line">  &lt;/error-page&gt;</span><br><span class="line">  <span class="comment">//更细致的区分</span></span><br><span class="line">  &lt;error-page&gt;</span><br><span class="line">    &lt;exception-type&gt;java.lang.RuntimeException&lt;/exception-type&gt;</span><br><span class="line">    &lt;location&gt;/error.jsp&lt;/location&gt;</span><br><span class="line">  &lt;/error-page&gt;</span><br></pre></td></tr></table></figure>
+
+<p><error-page>有两种使用方式：</error-page></p>
+<p>  <error-code>和<location>子元素；</location></error-code></p>
+<p>  <exception-type>和<location>子元素；</location></exception-type></p>
+<p>　　其中<error-code>是指定响应码；<location>指定转发的页面；<exception-type>是指定</exception-type></location></error-code></p>
+<h4 id="2-5、page指令的其他属性"><a href="#2-5、page指令的其他属性" class="headerlink" title="2.5、page指令的其他属性"></a>2.5、page指令的其他属性</h4><p>  language：只能是Java，这个属性可以看出JSP最初设计时的野心！希望JSP可以转换成其他语言！但是，到现在JSP也只能转换成Java代码；</p>
+<p>  info：JSP说明性信息；</p>
+<p>  isThreadSafe：默认为false，为true时，JSP生成的Servlet会去实现一个过时的标记接口SingleThreadModel，这时JSP就只能处理单线程的访问；</p>
+<p>  session：默认为true，表示当前JSP页面可以使用session对象，如果为false表示当前JSP页面不能使用session对象；</p>
+<p>  extends：指定当前JSP页面生成的Servlet的父类；</p>
+<h3 id="三、include指令"><a href="#三、include指令" class="headerlink" title="三、include指令"></a>三、include指令</h3><p>include指令表示静态包含！即目的是把多个JSP合并成一个JSP文件！</p>
+<p>include指令只有一个属性：file，指定要包含的页面，例如：&lt;%@includefile=”b.jsp”%&gt;。</p>
+<p>静态包含：当hel.jsp页面包含了lo.jsp页面后，在编译hel.jsp页面时，需要把hel.jsp和lo.jsp页面合并成一个文件，然后再编译成Servlet（Java文件）。</p>
+<p><img src="https://img-blog.csdn.net/2018040720343044" alt></p>
+<p>很明显，在ol.jsp中在使用username变量，而这个变量在hel.jsp中定义的，所以只有这两个JSP文件合并后才能使用。通过include指定完成对它们的合并！</p>
+<h3 id="四、taglib指令"><a href="#四、taglib指令" class="headerlink" title="四、taglib指令"></a>四、taglib指令</h3><p>在JSP页面中使用第三方的标签库时，需要使用taglib指令来“导包”。例如：</p>
+<p>&lt;%@ taglibprefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</p>
+<p>其中prefix表示标签的前缀，这个名称可以随便起。uri是由第三方标签库定义的，所以你需要知道第三方定义的uri</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
