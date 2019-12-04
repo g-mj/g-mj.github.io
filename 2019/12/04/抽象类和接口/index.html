@@ -13,7 +13,8 @@
     
 
     
-        <meta name="description" content="抽象类和接口抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域本">
+        <meta name="description" content="抽象类和接口抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         
+其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域">
     
 
     <!--Author-->
@@ -28,7 +29,8 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="抽象类和接口抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域本">
+        <meta property="og:description" content="抽象类和接口抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         
+其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域">
     
 
     <!--Open Graph Site Name-->
@@ -193,7 +195,8 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域本质的理解、对于设计意图的理解是否正确、合理。本文将对它们之间的区别进行分析。</p>
+                <h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>抽象类和接口是是Java语言中对于抽象类定义进行支持的两种机制，正是由于这两种机制的存在，才赋予了Java强大的面向对象能力。抽象类和接口之间对于抽象类定义的方面具有很大的相似性，甚至可以相互替换。         </p>
+<p>其实，两者之间还是有很大的区别的，对于它们的选择甚至反映出对于问题领域本质的理解、对于设计意图的理解是否正确、合理。本文将对它们之间的区别进行分析。</p>
 <h3 id="一、抽象类"><a href="#一、抽象类" class="headerlink" title="一、抽象类"></a>一、抽象类</h3><p>在面向对象的概念中，我们知道所有的对象都是通过类来描绘的，但是反过来却不是这样。并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。<br>      实例：定义一个抽象类Animal，提供抽象方法shout()，Dog()和Cat()都继承了抽象类Animal，所以必须实现其重写方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal cat=<span class="keyword">new</span> Cat();</span><br><span class="line">        Animal dog=<span class="keyword">new</span> Dog();</span><br><span class="line">        cat.shout();<span class="comment">//猫叫:喵喵~~~~</span></span><br><span class="line">        dog.shout();<span class="comment">//狗叫:汪汪~~~~</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span></span>; <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"猫叫:喵喵~~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"狗叫:汪汪~~~~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
